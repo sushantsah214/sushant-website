@@ -1,0 +1,109 @@
+<html>
+<head> <title> visit nepal </title>
+<style>
+          .img_deg
+         {
+               float: left;
+            }
+      input[type=search] {
+		width: 160;
+		padding: 8 20 8 60;
+		height: 30;
+		font-size: 18;
+		background-position: 2% 50%;
+		transition: 0.5s all ease-in-out;
+		filter: brightness(100%);
+		
+}
+	input[type=search]:focus,
+	input[type=search]:not(:placeholder-shown) {
+		width: 350;
+		filter: brightness(100%);
+	
+		
+}
+#table{
+	background: linear-gradient(to right, lightgreen,lightyellow,red);
+	border: 1px solid orange;
+}
+.menu{
+	text-decoration: none;
+	font-family: arial;
+}
+.pictures{
+	text-decoration: none;
+	font-family: arial;
+}
+.places{
+	text-decoration: none;
+	font-family: arial;
+}
+.signin{
+	text-decoration: none;
+	font-family: arial;
+}
+.aboutus{
+	text-decoration: none;
+	font-family: arial;
+}
+</style>
+ </head>
+<body bgcolor="black" background="hetauda.jpg" text="red">
+
+ <img class="img_deg"  src="visitnepal.png" width="25%" height="70%"> 
+ <center> <h2> <font color="red" size="6"> Visit Nepal center </h2> </font>
+<font color="red"> 
+<h2>kathmandu,Nepal </h2> </font><marquee width="50%" direction="right" background="hetauda.jpg" behavior="alternate"> <font color="green" size="15"> <b> <i> Visit nepal </font> </b> </i> </marquee >  </center> <br>
+
+<table border="2" width="100%" height="2%" id="table">
+       <tr> 
+          
+        	<th><font size="5" color="blue" title="back to home"><a href="main.html" target="main" class="menu" accesskey="b"> <i class="fa fa-home"> </i><img src="menu.jpg" width="30" height="30"> Menu</a></th></font> 
+        	<th> <font size="5" color="blue"> <a href="pictures.html" target="main" class="Pictures"> Pictures </a> </th> </font>
+			<th> <font size="5" color="blue"> <a href="places.html" target="main" class="places">Places </a> </th></font>
+ 
+			<th width="35%"> <form action=""> <center><input type="search" placeholder="search Visit nepal..." title="search here" height="80%" id="search" onkeyup="searchFun()"> <input type="submit" value="search">     
+ 			</form> <input type="text" class="menucolor" onkeyup="document.getElementById('table').style.background=this.value" aria-description placeholder="write a color of menu bar.. ">
+			</th> </center>
+
+
+			 <th><font size="5" color="blue">  <a href="aboutus.html" target="main" class="aboutus">About us</a> </th> </font>
+
+			<th> <font size="5" > <a href="signin.html"  target="main" class="signin"> sign in </a> </th>
+		</tr>
+
+</table>
+<script>
+	function searchFun() {
+		let filter = document.getElementById('search').value.toUpperCase();
+		let targetframemain= parent.frames["main"];
+		let targetframemain_table=targetframemain.getElementById("maintable");
+		let tr= targetframemain_table.getElementsByTagName('tr');
+		for(var i=0;i<tr.length;i++){
+			let td = tr[i].getElementsByTagName('td')[0];
+		
+			if(td) {
+				let textvalue = td.textcontent || td.innerHTML;
+				if(textvalue.toUpperCase().indexOf(filter)>-1){
+					tr[i].style.display = "";
+				}
+				else{
+					tr[i].style.display = "none";
+
+				}
+
+
+			}
+		}
+		
+	}
+</script>
+
+
+
+
+
+
+</body>
+</html>
+     
